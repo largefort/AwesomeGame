@@ -36,5 +36,6 @@ const enemies = document.querySelectorAll('.enemy');
 enemies.forEach(enemy => {
     enemy.addEventListener('click', function() {
         document.getElementById('overlay').classList.remove('hidden');
+        console.log("Hi! There is actually no game to play, just a very annoying overlay blocking the screen in a funny trolling way!");
     });
 });

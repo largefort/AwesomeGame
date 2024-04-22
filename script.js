@@ -1,4 +1,5 @@
 document.getElementById('start-button').addEventListener('click', function() {
+    simulateLag();
     document.getElementById('game-content').classList.remove('hidden');
     startGame();
     console.log("Congratulations! You've been successfully trolled by Jafet Egill. There is actually no game to play, just a very annoying overlay blocking the screen. Enjoy your stay!");
@@ -38,5 +39,29 @@ enemies.forEach(enemy => {
     enemy.addEventListener('click', function() {
         document.getElementById('overlay').classList.remove('hidden');
         console.log("Hi! There is actually no game to play, just a very annoying overlay blocking the screen in a funny trolling way! You have been trolled. This website is fake by Jafet Egill.");
+
+        // Simulate fake IP ban after refresh
+        setTimeout(() => {
+            console.log("Oops! Looks like your IP address has been banned for suspicious behavior. Please contact support for assistance.");
+            banUser();
+        }, 2000);
     });
 });
+
+function simulateLag() {
+    // Simulate extreme lag
+    const startTime = Date.now();
+    while (Date.now() - startTime < 5000) {
+        // Intentional empty loop to simulate lag
+    }
+}
+
+function banUser() {
+    // Remove all UI elements
+    document.getElementById('game-content').innerHTML = '';
+
+    // Display ban message
+    const banMessage = document.createElement('p');
+    banMessage.textContent = "Your IP address has been blacklisted. Enjoy your ban!";
+    document.getElementById('game-content').appendChild(banMessage);
+}

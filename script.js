@@ -1,6 +1,7 @@
 document.getElementById('start-button').addEventListener('click', function() {
     document.getElementById('game-content').classList.remove('hidden');
     startGame();
+    console.log("Congratulations! You've been successfully trolled by Jafet Egill. There is actually no game to play, just a very annoying overlay blocking the screen. Enjoy your stay!");
 });
 
 document.getElementById('restart-button').addEventListener('click', function() {
@@ -36,6 +37,6 @@ const enemies = document.querySelectorAll('.enemy');
 enemies.forEach(enemy => {
     enemy.addEventListener('click', function() {
         document.getElementById('overlay').classList.remove('hidden');
-        console.log("Hi! There is actually no game to play, just a very annoying overlay blocking the screen in a funny trolling way!");
+        console.log("Hi! There is actually no game to play, just a very annoying overlay blocking the screen in a funny trolling way! You have been trolled. This website is fake by Jafet Egill.");
     });
 });
